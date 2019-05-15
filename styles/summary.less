@@ -1,0 +1,36 @@
+.summary-block-collection-type-artists {
+  .summary-item {
+
+    .summary-thumbnail-outer-container {
+      padding: 2%;
+    }
+    .summary-thumbnail.img-wrapper {
+      overflow: hidden;
+      border-radius: 100%
+    }
+    .summary-content {
+      position: absolute;
+      top: 25%;
+      left: 2%;
+      right: 2%;
+      opacity: 0;
+      .summary-title {
+        text-align: center;
+        font-size: 2em;
+      }
+    }
+  }
+
+  .summary-item:hover {
+    @scale: 1.4;
+    transform: scale(@scale, @scale);
+
+    .summary-thumbnail.img-wrapper {
+      opacity: 0.8;
+    }
+    .summary-content {
+      opacity: 1;
+      color: #fff;
+    }
+  }
+}
