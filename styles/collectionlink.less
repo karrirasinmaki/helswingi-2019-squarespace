@@ -1,0 +1,32 @@
+.sqs-block-collectionlink {
+  @anim-speed: 0.3s ease-in-out;
+
+  .collectionlink-thumbnail {
+    height: 140px;
+
+    img {
+      .will-change-transform();
+      .transition(all @anim-speed);
+    }
+  }
+  .collectionlink-content {
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 0;
+    .collectionlink-title {
+      margin: 0;
+      line-height: 140px;
+    }
+  }
+
+  &:hover {
+    .collectionlink-thumbnail {
+      img {
+        .transform(rotateZ(6deg) scale(1.2, 1.2));
+      }
+    }
+  }
+}
