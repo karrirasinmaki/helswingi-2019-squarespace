@@ -408,6 +408,11 @@
   -webkit-order: @num; // Safari 7+
   order: @num; // Modern browsers
 }
+.flex-wrap (@string) {
+  -webkit-flex-wrap: @string;
+  -ms-flex-wrap: @string;
+  flex-wrap: @string;
+}
 .flex-align-items (@string) when (@string = flex-start) {
   -webkit-box-align: start; // Safari 6
   -ms-flex-align: start; // IE 10
