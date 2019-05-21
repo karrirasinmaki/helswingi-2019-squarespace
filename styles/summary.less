@@ -22,14 +22,14 @@
         margin: 0px;
         overflow: hidden;
         box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-        border-radius: 50%;
+        border-radius: @tweak-summary-grid-artists-border-radius;
 
         &::after {
           .dynamic-content();
           .will-change-transform();
           .transition(all @anim-speed);
-          box-shadow: inset 0 0 0 12px rgba(255,255,255,0.6);
-          border-radius: 50%;
+          box-shadow: inset 0 0 0 @tweak-summary-grid-artists-overlay-width @tweak-summary-grid-artists-overlay-color;
+          border-radius: @tweak-summary-grid-artists-border-radius;
         }
       }
     }
@@ -43,17 +43,16 @@
       bottom: 0%;
       margin: 24% 12%;
       opacity: 0;
-      color: #fff;
+      color: @tweak-summary-grid-artists-overlay-text-color;
       transform: scale(0.4, 0.4);
 
       .summary-title {
         text-align: center;
         height: 70%;
         overflow: hidden;
-        // font-size: 2em;
       }
       .summary-metadata-container {
-        border-top: 1px solid rgba(255,255,255,0.5);
+        border-top: 1px solid fade(@tweak-summary-grid-artists-overlay-text-color, 50%);
         padding: 10px 0;
         text-align: center;
       }
@@ -67,8 +66,8 @@
       .summary-thumbnail-container {
 
         &::after {
-          box-shadow: inset 0 0 0 0px rgba(255,255,255,0.6);
-          background: rgba(63,147,147, 0.8);
+          box-shadow: inset 0 0 0 @tweak-summary-grid-artists-overlay-width-hover @tweak-summary-grid-artists-overlay-color;
+          background: @tweak-summary-grid-artists-overlay-color-hover;
         }
       }
     }
