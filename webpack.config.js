@@ -1,6 +1,10 @@
 require('dotenv').config({silent: true});
 
 const webpack = require('webpack');
+
+const CopyPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+
 const path = require('path');
 const pkg = require(__dirname + '/package.json');
 
@@ -17,24 +21,34 @@ const config = {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].js'
   },
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        sourceMap: IS_PRODUCTION ? false : true,
+        terserOptions: {
+          beautify: !IS_PRODUCTION,
+          compress: IS_PRODUCTION ? {
+            drop_console: true, // eslint-disable-line camelcase
+            warnings: false
+          } : false,
+          mangle: IS_PRODUCTION ? {
+              except: ['_'] // don't mangle lodash
+          } : false
+        }
+      }),
+    ],
+  },
   plugins: [
     new webpack.DefinePlugin({
       '__DEBUG__': JSON.stringify(!IS_PRODUCTION)
     }),
 
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: !IS_PRODUCTION,
-      compress: IS_PRODUCTION ? {
-        drop_console: true, // eslint-disable-line camelcase
-        warnings: false
-      } : false,
-      mangle: IS_PRODUCTION ? {
-          except: ['_'] // don't mangle lodash
-      } : false
-    })
+    new CopyPlugin([
+      { from: './custom-collections-confs/*', to: './', flatten: true },
+    ]),
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,

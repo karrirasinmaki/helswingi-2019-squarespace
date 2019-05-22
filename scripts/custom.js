@@ -10,5 +10,4 @@ window.addEventListener('DOMContentLoaded', () => {
     element.setAttribute('data-controller', 'GalleryStrip')
     GalleryStrip(element)
   })
-  //controller.refresh()
 })
