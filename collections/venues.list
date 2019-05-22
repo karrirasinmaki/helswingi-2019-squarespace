@@ -1,0 +1,33 @@
+<h1>{collection.title}</h1>
+{.repeated section items}
+
+<article id="post-{id}" class="{@|item-classes}" data-item-id="{id}">
+	<!-- main image (thumbnail) -->
+	{.main-image?}
+	<div>
+		<a href="{fullUrl}" class="excerpt-image content-fill">
+			<img src="{assetUrl}?format=300w" />
+		</a>
+	</div>
+	{.end}
+	<!-- post title -->
+	<h2>
+		{.passthrough?}
+		<a href="{sourceUrl}" target="_blank">{title}</a>
+		{.or}
+		<a href="{fullUrl}">{title}</a>
+		{.end}
+	</h2>
+	<p>
+		<!-- excerpt or body -->
+		{excerpt}
+		<a class="link" href="{fullUrl}">Read More</a>
+	</p>
+</article>
+
+{.or}
+
+<!-- no items means no blog posts -->
+<p>No items.</p>
+
+{.end}

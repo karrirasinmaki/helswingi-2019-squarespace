@@ -1,5 +1,15 @@
 <section class="Intro{.background-source-video?} Intro--has-image{.or}{.if mainImage} Intro--has-image{.end}{.end}" data-parallax-original-element data-parallax-id="{id}"{.background-source-video?} data-controller="Parallax"{.or}{.if mainImage} data-controller="Parallax"{.end}{.end}>
-  <squarespace:block-field id="{id}_intro" class="Intro-content{.background-source-video?} sqs-alternate-block-style-container{.or}{.if mainImage} sqs-alternate-block-style-container{.end}{.end}" columns="12" label="{localizedStrings.intro}" />
+
+  {.equal? collection.typeName "page"}
+  {.or equal? collection.typeName "index"}
+  {.or}
+    <div id="{id}_intro_auto" class="Intro-content">
+      <h1 style="text-align:center;">{title}</h1>
+    </div>
+  {.end}
+
+  <squarespace:block-field id="{id}_intro" class="Intro-content{.background-source-video?} sqs-alternate-block-style-container{.or}{.if mainImage} sqs-alternate-block-style-container{.end}{.end}" columns="12" label="{localizedStrings.intro}">
+  </squarespace:block-field>
   {.background-source-video?}
     <figure class="Intro-image" data-parallax-image-wrapper>
       {@|apply background-media.block}
