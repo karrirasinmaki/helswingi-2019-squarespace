@@ -6,7 +6,7 @@ function GalleryStrip(element) {
   let lastScrollLeft = 0;
 
   const enableScroll = () => {
-    element.style.overflow = 'scroll';
+    element.style.overflowX = 'scroll';
   }
 
   const updateWrapperWidth = () => {
