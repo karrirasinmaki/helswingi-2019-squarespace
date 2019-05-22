@@ -37,7 +37,18 @@
               {.end}
             {.end}
           {.or}
-            {.if item}{.or}
+            {.if item}
+              {.section item}
+                {.var @collectionId id}
+                {.background-source-video?}
+                  <div class="Parallax-item" data-parallax-item data-parallax-id="{@collectionId}"></div>
+                {.or}
+                  {.main-image?}
+                    <div class="Parallax-item" data-parallax-item data-parallax-id="{@collectionId}"></div>
+                  {.end}
+                {.end}
+              {.end}
+            {.or}
               {.section collection}
                 {.var @collectionId id}
                 {.background-source-video?}
@@ -136,7 +147,9 @@
         </header>
 
         <div class="Content-outer">
-          {.if collection}{.if item}{.or}{.equal? collection.typeName "index"}{.or}
+          {.if item}
+            {item|apply intro.block}
+          {.or}{.if collection}{.equal? collection.typeName "index"}{.or}
             {.equal? collection.typeName "page"}
               {.section collection}
                 {.background-source-video?}

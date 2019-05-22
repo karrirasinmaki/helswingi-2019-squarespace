@@ -1,0 +1,8 @@
+{.section item}
+
+<article id="post-{id}" class="{@|item-classes}" data-item-id="{id}">
+	{body}
+</article>
+
+{.end}
+
