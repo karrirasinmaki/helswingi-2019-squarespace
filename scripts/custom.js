@@ -6,6 +6,9 @@ controller.register('GalleryStrip', GalleryStrip);
 
 window.addEventListener('DOMContentLoaded', () => {
   const galleryStrips = document.querySelectorAll('.sqs-gallery.sqs-gallery-design-strip')
-  Array.from(galleryStrips).forEach(element => element.setAttribute('data-controller', 'GalleryStrip'))
-  controller.refresh()
+  Array.from(galleryStrips).forEach(element => {
+    element.setAttribute('data-controller', 'GalleryStrip')
+    GalleryStrip(element)
+  })
+  //controller.refresh()
 })
