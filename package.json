@@ -1,35 +1,45 @@
 {
-  "name": "npm-base-template",
+  "name": "helswingi-2019-squarespace",
   "version": "1.0.0",
-  "description": "Squarespace Base Template using NPM",
-  "author": "Squarespace, Inc.",
+  "description": "Based on Squarespace Wright Framework",
+  "author": "Black Pepper Swing",
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
-    "build": "squarespace assemble && webpack --display-modules",
-    "watch": "squarespace assemble --watch & webpack --watch --hide-modules",
     "squarespace-server": "squarespace-server https://saxophone-disc-4tct.squarespace.com/ --auth",
-    "server": "squarespace runserver",
-    "authserver": "squarespace runserver --auth",
-    "start": "squarespace setup && (npm run watch & npm run server)",
-    "start:auth": "squarespace setup && (npm run watch & npm run authserver)",
+    "build": "squarespace assemble && webpack",
+    "clean": "squarespace clean",
     "deploy": "squarespace setup && squarespace deploy",
-    "build:deploy": "npm run build && npm run deploy"
-  },
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com:squarespace/base-template-npm.git"
+    "lint": "eslint scripts",
+    "start": "squarespace setup && (npm run watch & npm run server)",
+    "server": "squarespace runserver --auth",
+    "server:auth": "npm run server -- --run-authenticated",
+    "watch": "squarespace assemble --watch & webpack --watch"
   },
   "dependencies": {
-    "@squarespace/core": "^1.1.0"
+    "@babel/runtime": "^7.4.5",
+    "@squarespace/ancillary": "1.0.2",
+    "@squarespace/controller": "1.0.4",
+    "@squarespace/core": "1.1.0",
+    "@squarespace/darwin": "1.0.3",
+    "@squarespace/layout-slideshow": "1.0.1",
+    "@squarespace/mercury": "1.1.5",
+    "@squarespace/social-links": "1.0.2",
+    "@squarespace/video-background": "2.0.7",
+    "jump.js": "1.0.2",
+    "raf": "3.3.0",
+    "url-parse": "1.1.8"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-transform-runtime": "^7.4.0",
+    "@babel/preset-env": "^7.4.0",
     "@squarespace/server": "^1.2.0",
     "@squarespace/toolbelt": "^0.8.8",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
+    "babel-loader": "^8.0.6",
     "dotenv": "^2.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-squarespace": "^1.0.0",
     "webpack": "^3.10.0"
   }
 }

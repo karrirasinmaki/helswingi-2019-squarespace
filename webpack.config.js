@@ -39,9 +39,7 @@ const config = {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader', // 'babel-loader' is also a valid name to reference
-        query: {
-          presets: ['env']
-        }
+        options: { babelrc: true }
       }
     ]
   }
