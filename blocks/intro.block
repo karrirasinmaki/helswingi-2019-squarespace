@@ -10,6 +10,13 @@
     <squarespace:block-field id="{id}_intro" class="Intro-content{.background-source-video?} sqs-alternate-block-style-container{.or}{.if mainImage} sqs-alternate-block-style-container{.end}{.end}" columns="12" label="{localizedStrings.intro}" />
   {.or}
     <div id="{id}_intro_auto" class="Intro-content">
+      <h3 style="text-align:center;">
+        {collection.title}
+        {.if categories} | {.end}
+        {.repeated section categories}
+          {@}
+        {.alternates with} / {.end}
+      </h3>
       <h1 style="text-align:center;">{title}</h1>
     </div>
   {.end}
