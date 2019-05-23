@@ -443,6 +443,9 @@
   -webkit-align-items: baseline; // Safari 7+
   align-items: baseline; // Modern browsers
 }
+.flex-align-content (@string) {
+  align-content: @string;
+}
 .flex-justify-content (@string) when (@string = flex-start) {
   -webkit-box-pack: start; // Safari 6
   -ms-flex-pack: start; // IE 10

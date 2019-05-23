@@ -1,4 +1,17 @@
 
+/**
+ * shadow under element
+ * @intensity: decimal 0-1
+ * @rise: decimal 0-1
+ */
+.artist-shadow(@intensity, @rise: 0) {
+  @rise-effect: (@intensity + @intensity*@rise);
+  @shadow-x: 2px * @rise-effect;
+  @shadow-y: 5px * @rise-effect;
+  @shadow-blur: 20px * @rise-effect;
+  box-shadow: @shadow-x @shadow-y @shadow-blur rgba(0,0,0,1*@intensity);
+}
+
 .summary-block-setting-design-autocolumns.summary-block-collection-type-artists {
   @anim-speed: 0.3s ease-in-out;
   .dynamic-content() {
@@ -13,15 +26,16 @@
 
   .summary-item {
     .will-change-transform();
-    transition: transform @anim-speed;
+    .transition(transform @anim-speed);
+    overflow: visible;
 
     .summary-thumbnail-outer-container {
-      padding: 5px;
 
       .summary-thumbnail-container {
+        .transition(box-shadow @anim-speed);
+        .artist-shadow(@tweak-summary-grid-artists-shadow-intensity);
         margin: 0px;
         overflow: hidden;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
         border-radius: @tweak-summary-grid-artists-border-radius;
 
         &::after {
@@ -34,29 +48,38 @@
       }
     }
     .summary-content {
+      @inner-margin-y: 21%;
+      @inner-margin-x: 14%;
       .will-change-transform();
       .transition(transform @anim-speed);
+      .flex-parent();
+      .flex-wrap(wrap);
+      .flex-align-items(center);
+      .flex-align-content(center);
       position: absolute;
       top: 0;
       left: 0%;
       right: 0%;
       bottom: 0%;
-      margin: 24% 12%;
+      margin: @inner-margin-y @inner-margin-x;
+      height: 100% - @inner-margin-y*2;
       opacity: 0;
       color: @tweak-summary-grid-artists-overlay-text-color;
-      transform: scale(0.4, 0.4);
+      .transform(scale(0.4, 0.4));
 
+      > * {
+        width: 100%;
+      }
       .summary-title {
         .tweak-summary-grid-artists-title-font();
         text-align: center;
-        height: 70%;
-        overflow: hidden;
+        margin: 5px 0;
       }
       .summary-metadata-container {
         .tweak-summary-grid-artists-meta-font();
         border-top: 1px solid @tweak-summary-grid-artists-overlay-divider-color;
-        padding: 10px 0;
         text-align: center;
+        margin: 5px 0;
       }
     }
   }
@@ -66,6 +89,7 @@
     .summary-thumbnail-outer-container {
 
       .summary-thumbnail-container {
+        .artist-shadow(@tweak-summary-grid-artists-shadow-intensity, -0.2);
 
         &::after {
           box-shadow: inset 0 0 0 @tweak-summary-grid-artists-overlay-width-hover @tweak-summary-grid-artists-overlay-color;
@@ -76,7 +100,7 @@
 
     .summary-content {
       opacity: 1;
-      transform: scale(1, 1);
+      .transform(scale(1, 1));
     }
   }
 }
