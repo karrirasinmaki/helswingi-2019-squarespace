@@ -274,9 +274,18 @@
   .Header-nav-folder-item:hover { .alpha-color(@folder-link-color, 0.4); }
 }
 .mixin-header-nav-style(@option) when (@option = spotlight) {
-  &:hover .Header-nav-item { .alpha-color(@link-color, 0.4); }
+  &:hover .Header-nav-item { .alpha-color(@link-color, 0.4);
+    &.Header-nav-item--active,
+    &.Header-nav-folder-title--active {
+      color: @link-color;
+    }
+  }
   &:hover .Header-nav-item:hover { color: @link-color; }
-  .Header-nav-folder-item { .alpha-color(@folder-link-color, 0.4); }
+  .Header-nav-folder-item { .alpha-color(@folder-link-color, 0.4);
+    &.Header-nav-folder-item--active {
+      color: @link-color;
+    }
+  }
   .Header-nav-folder-item:hover { color: @folder-link-color; }
 }
 .mixin-header-nav-style(@option) when (@option = active) {

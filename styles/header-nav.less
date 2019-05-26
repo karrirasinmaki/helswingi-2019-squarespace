@@ -1,0 +1,22 @@
+.mixin-header-nav-active-styles() {
+  .Header-nav {
+    .Header-nav-item--active,
+    .Header-nav-folder-title--active,
+    .Header-nav-folder-item--active {
+      border-bottom: @tweak-header-overlay-primary-nav-link-active-style-border-width solid @tweak-header-overlay-primary-nav-link-active-style-color;
+    }
+  }
+}
+// Added this mixin in styles/header.less, mixins .mimixin-header-nav-style
+.tweak-header-primary-nav-hover-style-plain {
+  .mixin-header-nav-active-styles();
+}
+.tweak-header-primary-nav-hover-style-fade {
+  .mixin-header-nav-active-styles();
+}
+.tweak-header-primary-nav-hover-style-spotlight {
+  .mixin-header-nav-active-styles();
+}
+.tweak-header-primary-nav-hover-style-active {
+  .mixin-header-nav-active-styles();
+}
