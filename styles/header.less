@@ -687,7 +687,9 @@ body:not(.tweak-header-primary-nav-hover-style-button) {
   .Header-nav--primary .Header-nav-item,
   &.tweak-header-secondary-nav-inherit-styles .Header-nav--secondary .Header-nav-item {
     margin: 0 @tweak-header-primary-nav-link-spacing;
-    padding: 0.618em 0;
+    &, .Header-nav-folder-title {
+      padding: 0.618em 0;
+    }
   }
 }
 .tweak-header-secondary-nav-hover-style-button:not(.tweak-header-secondary-nav-inherit-styles) {
@@ -699,7 +701,9 @@ body:not(.tweak-header-primary-nav-hover-style-button) {
 body:not(.tweak-header-secondary-nav-hover-style-button):not(.tweak-header-secondary-nav-inherit-styles) {
   .Header-nav--secondary .Header-nav-item {
     margin: 0 @tweak-header-secondary-nav-link-spacing;
-    padding: 0.618em 0;
+    &, .Header-nav-folder-title {
+      padding: 0.618em 0;
+    }
   }
 }
 
