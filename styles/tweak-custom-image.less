@@ -1,0 +1,49 @@
+// -----------------------------------------
+
+//  Fonts
+
+// tweak: { "category": "Content: Fonts", "label" : "Image title", "title" : "tweak-image-title-font", "type" : "font", "loadAllVariants" : true, "target" : ".sqs-block-image .image-title p", "showOnlyWhenPresent" : ".sqs-block-image" }
+.tweak-image-title-font {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.2em;
+  letter-spacing: 0em;
+  line-height: 1.2em;
+  text-transform: none;
+}
+
+// tweak: { "category": "Content: Fonts", "label" : "Image title / min-font-set size", "title" : "tweak-image-title-font-min-font-set-size", "type" : "value", "min" : 0, "max" : 40, "step" : 0.1, "loadAllVariants" : true, "target" : ".sqs-block-image .image-title p.min-font-set", "showOnlyWhenPresent" : ".sqs-block-image" }
+@tweak-image-title-font-min-font-set-size: 0.8em;
+
+// tweak: { "category" : "Content: Fonts", "label" : "Image subtitle", "title" : "tweak-image-subtitle-font", "type" : "font", "loadAllVariants" : true, "target" : ".sqs-block-image .image-subtitle p", "showOnlyWhenPresent" : ".sqs-block-image" }
+.tweak-image-subtitle-font {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0em;
+  line-height: 1.6em;
+  text-transform: none;
+}
+
+// tweak: { "category": "Content: Fonts", "label" : "Image subtitle / min-font-set size", "title" : "tweak-image-subtitle-font-min-font-set-size", "type" : "value", "min" : 0, "max" : 40, "step" : 0.1, "loadAllVariants" : true, "target" : ".sqs-block-image .image-subtitle p.min-font-set", "showOnlyWhenPresent" : ".sqs-block-image" }
+@tweak-image-subtitle-font-min-font-set-size: 16px;
+
+
+// -----------------------------------------
+
+//  Colors
+
+// tweak: { "category": "Content: Colors", "label" : "Image title", "title" : "tweak-image-title-color", "type" : "color", "loadAllVariants" : true, "target" : ".sqs-block-image .design-layout-card .image-title p, .sqs-block-image .design-layout-overlap .image-title p, .sqs-block-image .design-layout-stack .image-title p", "showOnlyWhenPresent" : ".sqs-block-image" }
+@tweak-image-title-color: #000;
+
+// tweak: { "category": "Content: Colors", "label" : "Image subtitle", "title" : "tweak-image-subtitle-color", "type" : "color", "loadAllVariants" : true, "target" : ".sqs-block-image .design-layout-card .image-subtitle p, .sqs-block-image .design-layout-overlap .image-subtitle p, .sqs-block-image .design-layout-stack .image-subtitle p", "showOnlyWhenPresent" : ".sqs-block-image" }
+@tweak-image-subtitle-color: #000;
+
+// tweak: { "category": "Content: Colors", "label" : "Image title (negative)", "title" : "tweak-image-title-color-negative", "type" : "color", "loadAllVariants" : true, "target" : ".sqs-block-image .design-layout-collage .image-title p, .sqs-block-image .design-layout-poster .image-title p", "showOnlyWhenPresent" : ".sqs-block-image" }
+@tweak-image-title-color-negative: #fff;
+
+// tweak: { "category": "Content: Colors", "label" : "Image subtitle (negative)", "title" : "tweak-image-subtitle-color-negative", "type" : "color", "loadAllVariants" : true, "target" : ".sqs-block-image .design-layout-collage .image-subtitle p, .sqs-block-image .design-layout-poster .image-subtitle p", "showOnlyWhenPresent" : ".sqs-block-image" }
+@tweak-image-subtitle-color-negative: rgba(255,255,255,.85);
+

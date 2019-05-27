@@ -1,10 +1,49 @@
+// tweaks: styles/tweak-custom-image.less
+
+.sqs-block-image {
+  .design-layout-card,
+  .design-layout-overlap,
+  .design-layout-stack {
+    .image-title p {
+      color: @tweak-image-title-color;
+    }
+    .image-subtitle p,
+    .image-caption p {
+      color: @tweak-image-subtitle-color;
+    }
+  }
+  .design-layout-poster,
+  .design-layout-collage {
+    .image-title p {
+      color: @tweak-image-title-color-negative;
+    }
+    .image-subtitle p,
+    .image-caption p {
+      color: @tweak-image-subtitle-color-negative;
+    }
+  }
+}
+
 .sqs-block-image {
   .image-card.sqs-dynamic-text-container {
-    .image-title p {
+    .image-title {
       .tweak-image-title-font();
+      p {
+        .tweak-image-title-font();
+      }
+      p.min-font-set {
+        font-size: @tweak-image-title-font-min-font-set-size !important;
+      }
     }
-    .image-subtitle p {
+    .image-subtitle,
+    .image-caption {
       .tweak-image-subtitle-font();
+      p {
+        .tweak-image-subtitle-font();
+      }
+      p.min-font-set {
+        font-size: @tweak-image-subtitle-font-min-font-set-size !important;
+      }
     }
   }
 }
