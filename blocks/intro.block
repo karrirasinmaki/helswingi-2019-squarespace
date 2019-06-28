@@ -2,6 +2,9 @@
 <section class="Intro{.background-source-video?} Intro--has-image{.or}{.if mainImage} Intro--has-image{.end}{.end}" data-parallax-original-element data-parallax-id="{id}"{.background-source-video?} data-controller="Parallax"{.or}{.if mainImage} data-controller="Parallax"{.end}{.end}>
 {END##}
 
+{.equal? collection.typeName "products"}
+{.or}
+
 <section class="Intro Intro--has-image" data-parallax-original-element data-parallax-id="{id}" data-controller="Parallax">
 
   {.equal? collection.typeName "page"}
@@ -25,3 +28,5 @@
     {@|apply background-media.block}
   </figure>
 </section>
+
+{.end}
